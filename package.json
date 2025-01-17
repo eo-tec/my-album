@@ -1,0 +1,14 @@
+{
+    "name": "my-spotify-backend",
+    "version": "1.0.0",
+    "scripts": {
+        "start": "node server.js"
+    },
+    "dependencies": {
+        "dotenv": "^16.4.7",
+        "express": "^4.21.2",
+        "node-fetch": "^2.7.0",
+        "sharp": "^0.32.6",
+        "spotify-web-api-node": "^5.0.2"
+    }
+}
