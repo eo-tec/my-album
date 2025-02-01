@@ -5,10 +5,18 @@
         "start": "node server.js"
     },
     "dependencies": {
+        "@supabase/supabase-js": "^2.48.1",
+        "axios": "^1.7.9",
         "dotenv": "^16.4.7",
         "express": "^4.21.2",
         "node-fetch": "^2.7.0",
+        "node-telegram-bot-api": "^0.66.0",
         "sharp": "^0.32.6",
-        "spotify-web-api-node": "^5.0.2"
+        "spotify-web-api-node": "^5.0.2",
+        "uuid": "^11.0.5"
+    },
+    "devDependencies": {
+        "@types/node": "^22.13.0",
+        "typescript": "^5.7.3"
     }
 }
