@@ -293,14 +293,18 @@ app.get('/get-photo', async (req, res) => {
             pixelData.push(row);
         }
 
+        // Quitar caracteres extraños de photo.username
+        const cleanUsername = photo.username.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-zA-Z0-9]/g, "");
+        const clearTitle = photo.title.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-zA-Z0-9]/g, "");
+
         res.json({
             photo: {
                 width: 64,
                 height: 64,
                 data: pixelData,
             },
-            title: photo.title,
-            username: photo.username,
+            title: clearTitle,
+            username: cleanUsername,
         });
     } catch (err) {
         console.error('/get-photo error:', err);
