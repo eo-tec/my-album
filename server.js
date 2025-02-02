@@ -293,9 +293,9 @@ app.get('/get-photo', async (req, res) => {
             pixelData.push(row);
         }
 
-        // Quitar caracteres extraños de photo.username
-        const cleanUsername = photo.username.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-zA-Z0-9]/g, "");
-        const clearTitle = photo.title.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-zA-Z0-9]/g, "");
+        // Quitar solo los acentos de photo.username y photo.title
+        const cleanUsername = photo.username.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+        const clearTitle = photo.title.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 
         res.json({
             photo: {
